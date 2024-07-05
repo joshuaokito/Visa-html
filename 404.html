@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obtention de Visa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .whatsapp-button:hover {
+            background: #128c7e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Obtention de Visa</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#visa-types">Types de Visa</a></li>
+                <li><a href="#apply">Demande de Visa</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <h2>Bienvenue sur le service de demande de visa</h2>
+            <p>Découvrez les différents types de visas disponibles et soumettez votre demande en ligne.</p>
+        </div>
+    </section>
+
+    <section id="visa-types">
+        <div class="container">
+            <h2>Types de Visa et Tarifs</h2>
+            <h3>Visa Dubaï</h3>
+            <p>Frais tout inclus: 1300 USD</p>
+            <h3>Visa Canada</h3>
+            <p>Frais: 1500 USD</p>
+            <h3>Visa Chine</h3>
+            <p>Frais: 1200 USD</p>
+            <h3>Autres Pays</h3>
+            <p>Pour les autres destinations, veuillez nous contacter pour obtenir les tarifs et les informations détaillées.</p>
+        </div>
+    </section>
+
+    <section id="apply">
+        <div class="container">
+            <h2>Demande de Visa</h2>
+            <form id="visa-form">
+                <label for="name">Nom complet:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="visa-type">Type de visa:</label>
+                <select id="visa-type" name="visa-type">
+                    <option value="dubai">Dubaï</option>
+                    <option value="canada">Canada</option>
+                    <option value="chine">Chine</option>
+                    <option value="autre">Autre</option>
+                </select>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Soumettre la demande</button>
+            </form>
+            <div id="form-result"></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contactez-nous</h2>
+            <p>Pour toute question, contactez-nous directement via WhatsApp:</p>
+            <a href="https://wa.me/243970004404" target="_blank" class="whatsapp-button">Chattez avec nous sur WhatsApp</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Obtention de Visa. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        document.getElementById('visa-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const visaType = document.getElementById('visa-type').value;
+            const message = document.getElementById('message').value;
+            const resultDiv = document.getElementById('form-result');
+
+            // Simuler l'envoi de la demande de visa
+            resultDiv.innerHTML = `<p>Envoi de la demande de visa pour ${name} (${email}), type de visa: ${visaType}...</p>`;
+
+            // Exemple de réponse simulée
+            setTimeout(function() {
+                resultDiv.innerHTML = `
+                    <h3>Demande de visa soumise avec succès!</h3>
+                    <p>Nom: ${name}</p>
+                    <p>Email: ${email}</p>
+                    <p>Type de visa: ${visaType}</p>
+                    <p>Message: ${message}</p>
+                `;
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
